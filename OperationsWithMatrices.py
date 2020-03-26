@@ -1,4 +1,5 @@
 import numpy as np
+import csv
 
 # Hàm tạo ma trận
 def make_matrix(n):
@@ -23,6 +24,7 @@ def write_file(matrix):
         f.write('\n')
     f.close()
 
+# Đọc ma trận từ file
 def read_file(n):
     f = open('Input.txt', 'r')
     matrix = []
@@ -36,6 +38,15 @@ def read_file(n):
             arow.append(float(str))
         matrix.append(arow)
     f.close()
+    return np.array(matrix)
+
+# Đọc file .csv
+def read_csv_file():
+    matrix = []
+    with open('1_linearinput.csv', 'rt') as f:
+        data = csv.reader(f)
+        for row in data:
+            matrix.append(row)
     return np.array(matrix)
 
 # Hàm main
@@ -64,5 +75,8 @@ def main():
     for i in range(n):
         matrix_A[i].sort()
     print(matrix_A)
+
+    csv_matrix = read_csv_file()
+    print(csv_matrix)
 
 main()
