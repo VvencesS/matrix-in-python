@@ -60,4 +60,9 @@ def main():
     k = int(input('Input the row number: ')) # Hiển thị dòng thứ k của ma trận
     print('At row %d:\n' % (k), matrix_A[k])
 
+    # Sắp xếp ma trận theo dòng
+    for i in range(n):
+        matrix_A[i].sort()
+    print(matrix_A)
+
 main()
