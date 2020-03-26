@@ -1,5 +1,6 @@
 import numpy as np
-import csv
+import pandas as pd
+import matplotlib.pyplot as plt
 
 # Hàm tạo ma trận
 def make_matrix(n):
@@ -42,12 +43,15 @@ def read_file(n):
 
 # Đọc file .csv
 def read_csv_file():
-    matrix = []
-    with open('1_linearinput.csv', 'rt') as f:
-        data = csv.reader(f)
-        for row in data:
-            matrix.append(row)
-    return np.array(matrix)
+    return pd.read_csv('1_linearinput.csv', encoding='utf-8', header='infer', sep=',')
+
+# Vẽ đồ thị cho dữ liệu của thuộc tính (cột) x và y
+def graphing(matrix):
+    x_arr = matrix['x']
+    y_arr = matrix['y']
+
+    plt.plot(x_arr, y_arr)
+    plt.show()
 
 # Hàm main
 def main():
@@ -78,5 +82,7 @@ def main():
 
     csv_matrix = read_csv_file()
     print(csv_matrix)
+
+    graphing(csv_matrix) # Vẽ đồ thị
 
 main()
