@@ -41,7 +41,7 @@ def read_file(n):
     f.close()
     return np.array(matrix)
 
-# Đọc file .csv
+# Đọc file .csv sử dụng thư viện pandas
 def read_csv_file():
     return pd.read_csv('1_linearinput.csv', encoding='utf-8', header='infer', sep=',')
 
@@ -80,7 +80,7 @@ def main():
         matrix_A[i].sort()
     print(matrix_A)
 
-    csv_matrix = read_csv_file()
+    csv_matrix = read_csv_file() # Đọc file .csv
     print(csv_matrix)
 
     graphing(csv_matrix) # Vẽ đồ thị
