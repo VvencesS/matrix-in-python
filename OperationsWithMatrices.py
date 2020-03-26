@@ -43,12 +43,15 @@ def main():
     n = int(input('Input n = '))
     matrix = make_matrix(n) # Tạo ma trận 0 bằng numpy
     set_matrix(matrix) # Nhập giá trị cho ma trận
-    print(matrix)
+    print('Matrix A:\n', matrix)
 
     write_file(matrix) # Ghi ma trận vào file
 
     matrix_A = read_file(n) # Đọc ma trận từ fil
     matrix_B = matrix_A.transpose() # Tính ma trận chuyển vị của matrix_A
-    print(matrix_B)
+    print('Matrix B:\n', matrix_B)
+
+    matrix_C = matrix_A.dot(matrix_B) # Nhân 2 ma trận
+    print('Matrix C:\n', matrix_C)
 
 main()
