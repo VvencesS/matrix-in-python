@@ -47,4 +47,8 @@ def main():
 
     write_file(matrix) # Ghi ma trận vào file
 
+    matrix_A = read_file(n) # Đọc ma trận từ fil
+    matrix_B = matrix_A.transpose() # Tính ma trận chuyển vị của matrix_A
+    print(matrix_B)
+
 main()
