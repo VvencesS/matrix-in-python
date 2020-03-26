@@ -54,4 +54,7 @@ def main():
     matrix_C = matrix_A.dot(matrix_B) # Nhân 2 ma trận
     print('Matrix C:\n', matrix_C)
 
+    inverse_matrix_A = np.linalg.inv(matrix_A) # Tìm ma trận nghịch đảo
+    print('Inverse A matrix:\n', inverse_matrix_A)
+
 main()
