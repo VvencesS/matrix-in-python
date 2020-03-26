@@ -57,4 +57,7 @@ def main():
     inverse_matrix_A = np.linalg.inv(matrix_A) # Tìm ma trận nghịch đảo
     print('Inverse A matrix:\n', inverse_matrix_A)
 
+    k = int(input('Input the row number: ')) # Hiển thị dòng thứ k của ma trận
+    print('At row %d:\n' % (k), matrix_A[k])
+
 main()
